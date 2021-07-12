@@ -1,7 +1,7 @@
 {
   "name": "esbuild-plugin-import",
   "version": "1.0.0",
-  "description": "",
+  "description": "Modularly import plugin for esbuild.",
   "main": "index.js",
   "scripts": {
     "test": "jest"

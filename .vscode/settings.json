@@ -69,5 +69,8 @@
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true
   },
-  "cSpell.words": ["esbuild"]
+  "cSpell.words": [
+    "Modularly",
+    "esbuild"
+  ]
 }
