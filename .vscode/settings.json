@@ -1,0 +1,73 @@
+{
+  "eslint.nodePath": "./node_modules/eslint",
+  "editor.rulers": [80, 120],
+  "eslint.probe": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "vue"
+  ],
+  "files.associations": {
+    ".code-workspace": "jsonc",
+    ".babelrc": "json",
+    ".eslintrc": "jsonc",
+    ".eslintrc*.json": "jsonc",
+    ".stylelintrc": "jsonc",
+    "stylelintrc": "jsonc",
+    ".htmlhintrc": "jsonc",
+    "htmlhintrc": "jsonc",
+    "rush.json": "jsonc",
+    "**/common/config/rush/*.json": "jsonc",
+    ".lintstagedrc": "jsonc",
+    "Procfile*": "shellscript",
+    "README": "markdown"
+  },
+  "cSpell.diagnosticLevel": "Information",
+  "prettier.trailingComma": "all",
+  "prettier.printWidth": 80,
+  "prettier.semi": true,
+  "prettier.arrowParens": "avoid",
+  "prettier.bracketSpacing": true,
+  "prettier.jsxBracketSameLine": false,
+  "prettier.singleQuote": true,
+  //
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.organizeImports": true
+  },
+  "editor.codeActionsOnSaveTimeout": 5000,
+  "javascript.format.enable": false,
+  "typescript.format.enable": false,
+  //
+  "json.format.enable": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.formatOnSave": true
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.formatOnSave": true
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.formatOnSave": true
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.formatOnSave": true
+  },
+  "[json]": {
+    "editor.tabSize": 2,
+    "editor.formatOnType": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true
+  },
+  "[jsonc]": {
+    "editor.tabSize": 2,
+    "editor.formatOnType": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true
+  },
+  "cSpell.words": ["esbuild"]
+}

@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "EditorConfig.editorconfig",
+    "dbaeumer.vscode-eslint",
+    "drKnoxy.eslint-disable-snippets",
+    "streetsidesoftware.code-spell-checker",
+    "codezombiech.gitignore",
+    "ziyasal.vscode-open-in-github",
+    "orta.vscode-jest"
+  ]
+}
