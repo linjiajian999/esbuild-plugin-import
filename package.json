@@ -11,7 +11,7 @@
     "url": "git+https://github.com/linjiajian999/esbuild-plugin-import.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/linjiajian999/esbuild-plugin-import/issues"
   },
