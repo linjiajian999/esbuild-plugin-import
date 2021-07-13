@@ -1,31 +1,25 @@
-import esbuild from 'esbuild';
-
-const esbuildPluginImportOptions = [
-  {
-    libraryName: '@arco-design/web-react',
-    libraryDirectory: 'es',
-    camel2DashComponentName: false,
-    style: true, // 样式按需加载
-  },
-  {
-    libraryName: '@arco-design/web-react/icon',
-    libraryDirectory: 'react-icon',
-    camel2DashComponentName: false,
-  },
-  {
-    libraryName: '@byted/hooks',
-    libraryDirectory: 'lib',
-    camel2DashComponentName: false,
-  },
-];
-
-const code = `
-import { Button, ButtonProps } from '@arco-design/web-react';
-`;
+import * as esbuild from 'esbuild';
+import path from 'path';
+import {
+  esbuildPluginImport,
+  EsbuildPluginImportOption,
+} from '../esbuild-plugin-import';
 
 describe('esbuild-plugin-import', () => {
-  it(`should work`, () => {
-    const result = esbuild.transformSync(code);
-    console.log('result', result);
+  it(`should work`, async () => {
+    const config: EsbuildPluginImportOption[] = [
+      {
+        libraryName: 'antd',
+      },
+    ];
+
+    const result = await esbuild.build({
+      entryPoints: [path.resolve(__dirname, './code.ts')],
+      write: false,
+      plugins: [esbuildPluginImport(config)],
+    });
+    const [outputContent] = result.outputFiles;
+
+    expect(outputContent.text).toMatchSnapshot();
   });
 });

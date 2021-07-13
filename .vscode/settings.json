@@ -34,7 +34,7 @@
   //
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,
-    "source.organizeImports": true
+    "source.organizeImports": false
   },
   "editor.codeActionsOnSaveTimeout": 5000,
   "javascript.format.enable": false,
@@ -69,8 +69,5 @@
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true
   },
-  "cSpell.words": [
-    "Modularly",
-    "esbuild"
-  ]
+  "cSpell.words": ["Modularly", "esbuild"]
 }

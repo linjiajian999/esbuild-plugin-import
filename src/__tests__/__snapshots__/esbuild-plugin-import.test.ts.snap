@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`esbuild-plugin-import should work 1`] = `
+"import Button from \\"antd/lib/button\\";
+import AntdDivider from \\"antd/lib/divider\\";
+import Grid from \\"antd/lib/grid\\";
+import Layout from \\"antd/lib/layout\\";
+export { Button, AntdDivider, Grid, Layout };
+"
+`;

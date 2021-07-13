@@ -9,20 +9,20 @@ export interface EsbuildPluginImportOption {
    * @default 'lib'
    */
   libraryDirectory?: string;
-  style: 'css' | boolean | ((importPath: string) => string);
-  styleLibraryDirectory: string;
-  customStyleName: string;
+  style?: 'css' | boolean | ((importPath: string) => string);
+  styleLibraryDirectory?: string;
+  customStyleName?: string;
   /**
    * @default true
    */
   camel2DashComponentName?: boolean;
   camel2UnderlineComponentName?: boolean;
-  fileName: string;
-  customName: string;
+  fileName?: string;
+  customName?: string;
   /**
    * @default true
    */
-  transformToDefaultImport: string;
+  transformToDefaultImport?: string;
   ignoreImports?: (RegExp | string)[];
 }
 
