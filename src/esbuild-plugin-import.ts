@@ -23,6 +23,7 @@ export interface EsbuildPluginImportOption {
    * @default true
    */
   transformToDefaultImport: string;
+  ignoreImports?: (RegExp | string)[];
 }
 
 export const transCamel = (str: string, symbol: string) => {
@@ -50,6 +51,7 @@ const generateImportExpression = (
     styleLibraryDirectory,
     // customStyleName,
     style = false,
+    ignoreImports,
   } = config;
 
   const importLines = [];
@@ -59,6 +61,8 @@ const generateImportExpression = (
     .map(v => v.replace(/(^\s+|\s+$)/g, ''))
     .filter(Boolean);
 
+  const ignoreImportNames = [];
+
   for (const member of members) {
     // 包含注释的情况就就忽略
     if (/^(?:\/\/|\/\*)/.test(member)) {
@@ -66,6 +70,19 @@ const generateImportExpression = (
     }
     const [rawMemberName, aliasMemberName] = member.split(/\s+as\s+/);
     const memberName = aliasMemberName || rawMemberName;
+
+    if (ignoreImports?.length) {
+      const isIgnore = ignoreImports.some(ignoreReg => {
+        if (typeof ignoreReg === 'string') {
+          return ignoreReg === rawMemberName;
+        }
+        return ignoreReg.test(rawMemberName);
+      });
+      if (isIgnore) {
+        ignoreImportNames.push(member);
+        continue;
+      }
+    }
 
     // eslint-disable-next-line no-nested-ternary
     const transformedMemberName = camel2UnderlineComponentName
@@ -96,6 +113,13 @@ const generateImportExpression = (
     }
     importLines.push(`import ${memberName} from "${memberImportDirectory}";`);
   }
+
+  if (ignoreImportNames.length) {
+    importLines.push(
+      `import {${ignoreImportNames.join(',')}} from "${libraryString}";`,
+    );
+  }
+
   return importLines.join('\n');
 };
 
