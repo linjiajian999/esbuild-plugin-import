@@ -1,10 +1,183 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`esbuild-plugin-import should work 1`] = `
+exports[`esbuild-plugin-import should all config work 1`] = `
+"import \\"antd/es/Button/style/css\\";
+import Button from \\"antd/es/Button\\";
+import \\"antd/es/Divider/style/css\\";
+import AntdDivider from \\"antd/es/Divider\\";
+import \\"antd/es/Grid/style/css\\";
+import Grid from \\"antd/es/Grid\\";
+import { Dropdown } from \\"antd\\";
+import \\"antd/es/Layout/style/css\\";
+import Layout from \\"antd/es/Layout\\";
+import get from \\"lodash/get\\";
+import set from \\"lodash/set\\";
+import map from \\"lodash/map\\";
+export { Button, AntdDivider, Grid, Layout, Dropdown };
+export { get, set, map };
+"
+`;
+
+exports[`esbuild-plugin-import should basics work 1`] = `
 "import Button from \\"antd/lib/button\\";
 import AntdDivider from \\"antd/lib/divider\\";
 import Grid from \\"antd/lib/grid\\";
+import Dropdown from \\"antd/lib/dropdown\\";
 import Layout from \\"antd/lib/layout\\";
-export { Button, AntdDivider, Grid, Layout };
+import get from \\"lodash/get\\";
+import set from \\"lodash/set\\";
+import map from \\"lodash/map\\";
+export { Button, AntdDivider, Grid, Layout, Dropdown };
+export { get, set, map };
+"
+`;
+
+exports[`esbuild-plugin-import should camel2DashComponentName is equal to false work 1`] = `
+"import Button from \\"antd/lib/Button\\";
+import AntdDivider from \\"antd/lib/Divider\\";
+import Grid from \\"antd/lib/Grid\\";
+import Dropdown from \\"antd/lib/Dropdown\\";
+import Layout from \\"antd/lib/Layout\\";
+import { get, set, map } from \\"lodash\\";
+export { Button, AntdDivider, Grid, Layout, Dropdown };
+export { get, set, map };
+"
+`;
+
+exports[`esbuild-plugin-import should camel2DashComponentName is equal to true work 1`] = `
+"import Button from \\"antd/lib/button\\";
+import AntdDivider from \\"antd/lib/divider\\";
+import Grid from \\"antd/lib/grid\\";
+import Dropdown from \\"antd/lib/dropdown\\";
+import Layout from \\"antd/lib/layout\\";
+import { get, set, map } from \\"lodash\\";
+export { Button, AntdDivider, Grid, Layout, Dropdown };
+export { get, set, map };
+"
+`;
+
+exports[`esbuild-plugin-import should camel2UnderlineComponentName is equal to false work 1`] = `
+"import Button from \\"antd/lib/button\\";
+import AntdDivider from \\"antd/lib/divider\\";
+import Grid from \\"antd/lib/grid\\";
+import Dropdown from \\"antd/lib/dropdown\\";
+import Layout from \\"antd/lib/layout\\";
+import { get, set, map } from \\"lodash\\";
+export { Button, AntdDivider, Grid, Layout, Dropdown };
+export { get, set, map };
+"
+`;
+
+exports[`esbuild-plugin-import should camel2UnderlineComponentName is equal to true work 1`] = `
+"import Button from \\"antd/lib/button\\";
+import AntdDivider from \\"antd/lib/divider\\";
+import Grid from \\"antd/lib/grid\\";
+import Dropdown from \\"antd/lib/dropdown\\";
+import Layout from \\"antd/lib/layout\\";
+import { get, set, map } from \\"lodash\\";
+export { Button, AntdDivider, Grid, Layout, Dropdown };
+export { get, set, map };
+"
+`;
+
+exports[`esbuild-plugin-import should ignoreImports work 1`] = `
+"import Button from \\"antd/lib/button\\";
+import AntdDivider from \\"antd/lib/divider\\";
+import Grid from \\"antd/lib/grid\\";
+import { Dropdown } from \\"antd\\";
+import Layout from \\"antd/lib/layout\\";
+import { get, set, map } from \\"lodash\\";
+export { Button, AntdDivider, Grid, Layout, Dropdown };
+export { get, set, map };
+"
+`;
+
+exports[`esbuild-plugin-import should libraryDirectory work 1`] = `
+"import Button from \\"antd/es/button\\";
+import AntdDivider from \\"antd/es/divider\\";
+import Grid from \\"antd/es/grid\\";
+import Dropdown from \\"antd/es/dropdown\\";
+import Layout from \\"antd/es/layout\\";
+import { get, set, map } from \\"lodash\\";
+export { Button, AntdDivider, Grid, Layout, Dropdown };
+export { get, set, map };
+"
+`;
+
+exports[`esbuild-plugin-import should options.style is equal to 'css' work 1`] = `
+"import \\"antd/lib/button/style/css\\";
+import Button from \\"antd/lib/button\\";
+import \\"antd/lib/button-props/style/css\\";
+import \\"antd/lib/divider/style/css\\";
+import AntdDivider from \\"antd/lib/divider\\";
+import \\"antd/lib/grid/style/css\\";
+import Grid from \\"antd/lib/grid\\";
+import \\"antd/lib/dropdown/style/css\\";
+import Dropdown from \\"antd/lib/dropdown\\";
+import \\"antd/lib/layout/style/css\\";
+import Layout from \\"antd/lib/layout\\";
+import { get, set, map } from \\"lodash\\";
+export { Button, AntdDivider, Grid, Layout, Dropdown };
+export { get, set, map };
+"
+`;
+
+exports[`esbuild-plugin-import should options.style is equal to false work 1`] = `
+"import Button from \\"antd/lib/button\\";
+import AntdDivider from \\"antd/lib/divider\\";
+import Grid from \\"antd/lib/grid\\";
+import Dropdown from \\"antd/lib/dropdown\\";
+import Layout from \\"antd/lib/layout\\";
+import { get, set, map } from \\"lodash\\";
+export { Button, AntdDivider, Grid, Layout, Dropdown };
+export { get, set, map };
+"
+`;
+
+exports[`esbuild-plugin-import should options.style is equal to true work 1`] = `
+"import \\"antd/lib/button/style\\";
+import Button from \\"antd/lib/button\\";
+import \\"antd/lib/button-props/style\\";
+import \\"antd/lib/divider/style\\";
+import AntdDivider from \\"antd/lib/divider\\";
+import \\"antd/lib/grid/style\\";
+import Grid from \\"antd/lib/grid\\";
+import \\"antd/lib/dropdown/style\\";
+import Dropdown from \\"antd/lib/dropdown\\";
+import \\"antd/lib/layout/style\\";
+import Layout from \\"antd/lib/layout\\";
+import { get, set, map } from \\"lodash\\";
+export { Button, AntdDivider, Grid, Layout, Dropdown };
+export { get, set, map };
+"
+`;
+
+exports[`esbuild-plugin-import should options.style is function work 1`] = `
+"import \\"antd/lib/button/Button/css\\";
+import Button from \\"antd/lib/button\\";
+import \\"antd/lib/button-props/ButtonProps/css\\";
+import \\"antd/lib/divider/Divider/css\\";
+import AntdDivider from \\"antd/lib/divider\\";
+import \\"antd/lib/grid/Grid/css\\";
+import Grid from \\"antd/lib/grid\\";
+import \\"antd/lib/dropdown/Dropdown/css\\";
+import Dropdown from \\"antd/lib/dropdown\\";
+import \\"antd/lib/layout/Layout/css\\";
+import Layout from \\"antd/lib/layout\\";
+import { get, set, map } from \\"lodash\\";
+export { Button, AntdDivider, Grid, Layout, Dropdown };
+export { get, set, map };
+"
+`;
+
+exports[`esbuild-plugin-import should styleLibraryDirectory work 1`] = `
+"import Button from \\"antd/lib/button\\";
+import AntdDivider from \\"antd/lib/divider\\";
+import Grid from \\"antd/lib/grid\\";
+import Dropdown from \\"antd/lib/dropdown\\";
+import Layout from \\"antd/lib/layout\\";
+import { get, set, map } from \\"lodash\\";
+export { Button, AntdDivider, Grid, Layout, Dropdown };
+export { get, set, map };
 "
 `;

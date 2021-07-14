@@ -9,7 +9,10 @@ export interface EsbuildPluginImportOption {
    * @default 'lib'
    */
   libraryDirectory?: string;
-  style?: 'css' | boolean | ((importPath: string) => string);
+  style?:
+    | 'css'
+    | boolean
+    | ((importName: string, importPath: string) => string);
   styleLibraryDirectory?: string;
   customStyleName?: string;
   /**
@@ -17,8 +20,8 @@ export interface EsbuildPluginImportOption {
    */
   camel2DashComponentName?: boolean;
   camel2UnderlineComponentName?: boolean;
-  fileName?: string;
-  customName?: string;
+  // fileName?: string;
+  // customName?: string;
   /**
    * @default true
    */
@@ -56,7 +59,8 @@ const generateImportExpression = (
 
   const importLines = [];
   const members = memberString
-
+    .replace(/\/\/.*/gm, '') // ignore comments //
+    .replace(/\/\*(.|\n)*?\*\//gm, '') // ignore comments /* */
     .split(',')
     .map(v => v.replace(/(^\s+|\s+$)/g, ''))
     .filter(Boolean);
@@ -64,10 +68,6 @@ const generateImportExpression = (
   const ignoreImportNames = [];
 
   for (const member of members) {
-    // 包含注释的情况就就忽略
-    if (/^(?:\/\/|\/\*)/.test(member)) {
-      continue;
-    }
     const [rawMemberName, aliasMemberName] = member.split(/\s+as\s+/);
     const memberName = aliasMemberName || rawMemberName;
 
@@ -108,7 +108,7 @@ const generateImportExpression = (
       stylePath = path.join(stylePath, 'style', 'css');
       importLines.push(`import "${stylePath}";`);
     } else if (typeof style === 'function') {
-      stylePath = style(stylePath);
+      stylePath = style(rawMemberName, stylePath);
       importLines.push(`import "${stylePath}";`);
     }
     importLines.push(`import ${memberName} from "${memberImportDirectory}";`);
