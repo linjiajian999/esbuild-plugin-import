@@ -18,7 +18,7 @@ import Button from 'antd/lib/button';
 ## Usage
 
 ```shell
-npm install @gua/esbuild-plugin-import
+npm install @linjiajian999/esbuild-plugin-import
 ```
 
 ### config
