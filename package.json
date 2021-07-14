@@ -1,6 +1,6 @@
 {
-  "name": "esbuild-plugin-import",
-  "version": "1.0.0",
+  "name": "@esbuild/esbuild-plugin-import",
+  "version": "1.0.0-alpha.0",
   "description": "Modularly import plugin for esbuild.",
   "keywords": [
     "esbuild",
