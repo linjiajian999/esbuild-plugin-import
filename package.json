@@ -26,6 +26,9 @@
     "url": "https://github.com/linjiajian999/esbuild-plugin-import/issues"
   },
   "homepage": "https://github.com/linjiajian999/esbuild-plugin-import#readme",
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
     "@babel/eslint-parser": "^7.14.7",
     "@commitlint/cli": "^12.1.4",
