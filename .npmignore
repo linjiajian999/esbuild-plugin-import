@@ -1,0 +1,17 @@
+.vscode
+
+node_modules
+
+.eslintrc.js
+.eslintignore
+
+.linstagedrc
+
+coverage
+jest.config.ts
+
+tsconfig.json
+
+lib/__tests__
+
+.gitignore
