@@ -4,8 +4,12 @@ node_modules
 
 .eslintrc.js
 .eslintignore
+.eslintcache
 
 .linstagedrc
+.husky
+.commitlintrc.json
+commitlint.config.js
 
 coverage
 jest.config.ts

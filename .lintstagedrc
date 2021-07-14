@@ -1,3 +1,7 @@
-// {
-//   ""
-// }
+{
+  "*.{ts,tsx}": ["eslint --fix --color --cache --quiet", "git add"],
+  "*.{js,jsx,mjs,mjsx,cjs,cjsx}": [
+    "eslint --fix --color --cache --quiet",
+    "git add"
+  ]
+}

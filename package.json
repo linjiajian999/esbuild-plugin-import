@@ -2,9 +2,18 @@
   "name": "esbuild-plugin-import",
   "version": "1.0.0",
   "description": "Modularly import plugin for esbuild.",
+  "keywords": [
+    "esbuild",
+    "esbuild-plugin-import",
+    "babel-plugin-import",
+    "import"
+  ],
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "rimraf lib && tsc",
+    "dev": "tsc -w",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -18,8 +27,11 @@
   "homepage": "https://github.com/linjiajian999/esbuild-plugin-import#readme",
   "devDependencies": {
     "@babel/eslint-parser": "^7.14.7",
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
     "@types/fs-extra": "^9.0.12",
     "@types/jest": "^26.0.24",
+    "@types/lodash": "^4.14.171",
     "@types/node": "^16.3.0",
     "@typescript-eslint/eslint-plugin": "^4.28.2",
     "@typescript-eslint/parser": "^4.28.2",
@@ -27,8 +39,12 @@
     "eslint": "^7.30.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
+    "husky": "^7.0.0",
     "jest": "^27.0.6",
+    "lint-staged": "^11.0.1",
+    "lodash": "^4.17.21",
     "prettier": "^2.3.2",
+    "rimraf": "^3.0.2",
     "ts-jest": "^27.0.3",
     "ts-node": "^10.1.0",
     "typescript": "^4.3.5"
