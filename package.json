@@ -9,7 +9,7 @@
     "babel-plugin-import",
     "import"
   ],
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "jest",
     "build": "rimraf lib && tsc",
