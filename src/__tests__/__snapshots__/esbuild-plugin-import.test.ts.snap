@@ -181,3 +181,23 @@ export { Button, AntdDivider, Grid, Layout, Dropdown };
 export { get, set, map };
 "
 `;
+
+exports[`esbuild-plugin-import should transformToDefaultImport is equal to false work 1`] = `
+"import \\"antd/lib/button/style\\";
+import { Button } from \\"antd/lib/button\\";
+import \\"antd/lib/button-props/style\\";
+import \\"antd/lib/divider/style\\";
+import { AntdDivider } from \\"antd/lib/divider\\";
+import \\"antd/lib/grid/style\\";
+import { Grid } from \\"antd/lib/grid\\";
+import \\"antd/lib/dropdown/style\\";
+import { Dropdown } from \\"antd/lib/dropdown\\";
+import \\"antd/lib/layout/style\\";
+import { Layout } from \\"antd/lib/layout\\";
+import get from \\"lodash/get\\";
+import set from \\"lodash/set\\";
+import map from \\"lodash/map\\";
+export { Button, AntdDivider, Grid, Layout, Dropdown };
+export { get, set, map };
+"
+`;

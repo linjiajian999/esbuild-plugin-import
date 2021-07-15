@@ -47,6 +47,15 @@ const configList: Record<string, EsbuildPluginImportOption[]> = {
       ignoreImports: [/Props$/, 'Dropdown'],
     },
   ],
+  [`transformToDefaultImport is equal to false`]: [
+    {
+      libraryName: 'antd',
+      camel2UnderlineComponentName: true,
+      transformToDefaultImport: false,
+      style: true,
+    },
+    { libraryName: 'lodash', libraryDirectory: '' },
+  ],
   [`all config`]: [
     {
       libraryName: 'antd',

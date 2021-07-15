@@ -1,7 +1,6 @@
 import { Loader, Plugin } from 'esbuild';
 import fsExtra from 'fs-extra';
 import path from 'path';
-// import { } from 'lodash';
 
 export interface EsbuildPluginImportOption {
   libraryName: string;
@@ -25,13 +24,17 @@ export interface EsbuildPluginImportOption {
   /**
    * @default true
    */
-  transformToDefaultImport?: string;
+  transformToDefaultImport?: boolean;
   ignoreImports?: (RegExp | string)[];
 }
 
 export const transCamel = (str: string, symbol: string) => {
   const _str = str[0].toLowerCase() + str.substr(1);
   return _str.replace(/([A-Z])/g, $1 => `${symbol}${$1.toLowerCase()}`);
+};
+
+export const transWinPath = (modulePath: string) => {
+  return modulePath.replace(/\\/g, '/');
 };
 
 const importReg = /^import\s+{((?:.|\n)*?)}\s+from\s+['"](.*?)['"];?/m;
@@ -55,6 +58,7 @@ const generateImportExpression = (
     // customStyleName,
     style = false,
     ignoreImports,
+    transformToDefaultImport = true,
   } = config;
 
   const importLines = [];
@@ -111,7 +115,14 @@ const generateImportExpression = (
       stylePath = style(rawMemberName, stylePath);
       importLines.push(`import "${stylePath}";`);
     }
-    importLines.push(`import ${memberName} from "${memberImportDirectory}";`);
+
+    if (transformToDefaultImport) {
+      importLines.push(`import ${memberName} from "${memberImportDirectory}";`);
+    } else {
+      importLines.push(
+        `import {${memberName}} from "${memberImportDirectory}";`,
+      );
+    }
   }
 
   if (ignoreImportNames.length) {
@@ -120,7 +131,7 @@ const generateImportExpression = (
     );
   }
 
-  return importLines.join('\n');
+  return importLines.map(line => transWinPath(line)).join('\n');
 };
 
 const generateNewContent = (

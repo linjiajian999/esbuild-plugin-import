@@ -1,6 +1,6 @@
 {
   "name": "@linjiajian999/esbuild-plugin-import",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.1",
   "private": false,
   "description": "Modularly import plugin for esbuild.",
   "keywords": [
